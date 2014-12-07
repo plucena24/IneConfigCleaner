@@ -16,7 +16,7 @@ def file_ext_renamer(path, new_ext):
             os.rename(full_name, new_name1)
 
 
-def things_to_change(change_items, path):
+def find_and_replace_text(change_items, path):
     os.chdir(path)
     _files_in_dir = os.listdir(os.curdir)
     for _file in _files_in_dir:
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     change = {'version ': 'enable\nconfigure terminal\nversion ', 'interface GigabitEthernet1\n ip address dhcp\n': 'interface GigabitEthernet1\n no shutdown\n', 'interface Vlan1\n ip address dhcp': 'interface Vlan1\n no shutdown'}
 
     file_ext_renamer(dir_path, '.txt')
-    things_to_change(change, dir_path)
+    find_and_replace_text(change, dir_path)
 
 
 
